@@ -2,6 +2,7 @@
 Go game database exercising dry-rb and rom-rb
 
 ## Try It
+first install bundler if you don't have it, then `bundle install` to fetch the dependencies
 
 use `bin/console` to load the applicaiton.  Currently, the only real functionality is in the GAMES_REPO.
 
