@@ -1,18 +1,4 @@
 module Repositories
-  class UserRepo < ROM::Repository[:users]
-    commands :create
-
-    def query(conditions)
-      users.where(conditions)
-    end
-
-    # collect a list of all user ids
-    def ids
-      users.pluck(:id)
-    end
-  end
-
-  # Another repository could handle the games
   class GamesRepo < ROM::Repository[:games]
     commands :create
 
@@ -38,4 +24,3 @@ module Repositories
     end
   end
 end
-
