@@ -24,7 +24,8 @@
     do something like =Model.save= to save the current object directly to the DB.
 
     A set of game records are in [[./assets]] which =main.rb= uses to populate the
-    database through the [[./repositories/games_repo.rb][Games]] and [[./repositories/players_repo.rb][Players]] repositories.
+    database through the [[.lib/repositories/games_repo.rb][Games]] and 
+    [[./lib/repositories/players_repo.rb][Players]] repositories.
 
     =Games.white_wins= returns an array of game structs where the 
     white player wins.
