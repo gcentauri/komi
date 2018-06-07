@@ -1,0 +1,38 @@
+* komi
+
+  A web app for go players to organize clubs, store and access game records,
+  browse and comment on games, and...
+
+  Also an attempt to document the process of building a Ruby web app in
+  2018 using a combination of new and old tools.  Rails will handle the
+  View and Controller parts, while using rom-rb and dry-rb to deal with
+  Models in a different way than ActiveRecord.
+
+** Current State 2018-06-06
+ 
+   At the moment, you just have [[./bin/console]] to run the [[./lib/main.rb]] script
+   and load up the collection of games into an sqlite in-memory database.
+
+*** Repositories
+    If I understand the documentation, a =rom-repository= is an abstract interface
+    to the database relations defined in [[./lib/relations]].  You can think of it as
+    a place to ask for collections of structs.  You can store stuff and retrieve
+    it too, but the stuff you're interacting with is application data, not
+    database relations.  You ask the Repo to store a record of your stuff with
+    a 'command' like =Repo.create({my: struct})=.  You define functions to 
+    use relations to fill orders for structs to pick up from the repo.  You won't
+    do something like =Model.save= to save the current object directly to the DB.
+
+    A set of game records are in [[./assets]] which =main.rb= uses to populate the
+    database through the [[./repositories/games_repo.rb][Games]] and [[./repositories/players_repo.rb][Players]] repositories.
+
+    =Games.white_wins= returns an array of game structs where the 
+    white player wins.
+
+    =Games.player_wins("Fujisawa Shuko")= returns an array of game structs 
+    where one of my favorite players is the winner
+
+    =Players.names= returns array of all the unique players in this collection
+
+    =Players.all= returns array of all Player structs (includes rank and country)
+   
