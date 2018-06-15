@@ -8,7 +8,10 @@
   View and Controller parts, while using rom-rb and dry-rb to deal with
   Models in a different way than ActiveRecord.
 
-** Current State 2018-06-06
+** Developing the game tree 2018-06-14
+   [[./spec/sgf.org][go here]]
+
+** Initial State 2018-06-06
  
    At the moment, you just have [[./bin/console]] to run the [[./lib/main.rb]] script
    and load up the collection of games into an sqlite in-memory database.
