@@ -1,4 +1,5 @@
 require 'roda'
+require_relative 'lib/main'
 
 class App < Roda
   route do |r|
@@ -28,6 +29,20 @@ class App < Roda
         r.post do
           puts "Someone said #{@greeting}!"
           r.redirect
+        end
+      end
+    end
+
+    r.on 'komi' do
+      @komi = Komi.new(File.expand_path('./assets'))
+
+      r.is do
+        r.get do
+          output = ""
+          @komi.all_players.each do |p|
+            output += "</br>#{p.name}</br> "
+          end
+          output
         end
       end
     end

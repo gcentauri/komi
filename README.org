@@ -4,9 +4,9 @@
   browse and comment on games, and...
 
   Also an attempt to document the process of building a Ruby web app in
-  2018 using a combination of new and old tools.  Rails will handle the
-  View and Controller parts, while using [[http://rom-rb.org][rom-rb]] and 
-  [[http://dry-rb.org][dry-rb]] to deal with Models rather than ActiveRecord.
+  2019 using a combination of new tools.[[http://rom-rb.org][ rom-rb]] providing persistence
+  and [[http://dry-rb.org][dry-rb]] providing data and functional tools, with [[http://roda.jeremyevans.net/][roda]] providing
+  routing. simple, powerful tools, hopefully a simple demonstration.
 
 ** Developing the game tree 2018-06-14
    [[./spec/sgf.org][go here]]
@@ -39,4 +39,4 @@
     =Players.names= returns array of all the unique players in this collection
 
     =Players.all= returns array of all Player structs (includes rank and country)
-   
+    
