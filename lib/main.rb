@@ -36,7 +36,7 @@ players.each do |player|
 end
 
 # Now read through a directory full of games and process them into the DB
-games = Dir.glob( 'assets/Kis01/*')
+games = Dir.glob('assets/Kis01/*')
 games.each do |file|
   game_record = SGF.parse_game_metadata(File.readlines(file))
   Games.create(game_record)

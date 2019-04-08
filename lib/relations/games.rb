@@ -12,8 +12,9 @@ module Relations
     end
 
     def by_player_wins(name)
-      by_winning_color('W').where(player_white: name).
-        union(by_winning_color('B').where(player_black: name))
+      by_winning_color('W')
+        .where(player_white: name)
+        .union(by_winning_color('B').where(player_black: name))
     end
   end
 end

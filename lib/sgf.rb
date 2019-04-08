@@ -43,15 +43,15 @@ module SGF
     # returns a Hash matching schema for Game records
     def parse_game_metadata(game)
       game.select { |line| meta_field?(line) }
-        .map { |field| pair_meta_field(field) }.to_h
+          .map { |field| pair_meta_field(field) }.to_h
     end
 
     # game_record : Hash<Game>
     # returns Array[<Player>]
     def process_players_jp(game_record)
       [
-        {name: game_record[:player_black], rank: game_record[:black_rank], country: 'Japan'},
-        {name: game_record[:player_white], rank: game_record[:white_rank], country: 'Japan'}
+        { name: game_record[:player_black], rank: game_record[:black_rank], country: 'Japan' },
+        { name: game_record[:player_white], rank: game_record[:white_rank], country: 'Japan' }
       ]
     end
   end

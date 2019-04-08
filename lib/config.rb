@@ -1,4 +1,4 @@
-db_config = ROM::Configuration.new(:sql, "sqlite::memory") do |conf| 
+db_config = ROM::Configuration.new(:sql, 'sqlite::memory') do |conf|
   conf.default.create_table(:users) do
     primary_key :id
     column :name, String, null: false
